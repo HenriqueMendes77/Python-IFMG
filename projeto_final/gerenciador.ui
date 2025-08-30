@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+  <class>GerenciadorUI</class>
+  <widget class="QMainWindow" name="GerenciadorUI">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>600</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>Gerenciador Financeiro</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+
+      <!-- Tabela de transações -->
+      <widget class="QTableWidget" name="tabelaTransacoes">
+        <property name="geometry">
+          <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>511</width>
+            <height>561</height>
+          </rect>
+        </property>
+        <column>
+          <property name="text">
+            <string>Código</string>
+          </property>
+        </column>
+        <column>
+          <property name="text">
+            <string>Data</string>
+          </property>
+        </column>
+        <column>
+          <property name="text">
+            <string>Tipo</string>
+          </property>
+        </column>
+        <column>
+          <property name="text">
+            <string>Descrição</string>
+          </property>
+        </column>
+        <column>
+          <property name="text">
+            <string>Categoria</string>
+          </property>
+        </column>
+        <column>
+          <property name="text">
+            <string>Valor</string>
+          </property>
+        </column>
+      </widget>
+
+      <!-- Saldo atual -->
+      <!-- Label do título do saldo -->
+      <widget class="QLabel" name="labelSaldoTitulo">
+        <property name="geometry">
+          <rect>
+            <x>560</x>
+            <y>20</y>
+            <width>220</width>
+            <height>25</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>Saldo atual:</string>
+        </property>
+        <property name="font">
+          <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+          </font>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+      </widget>
+
+      <!-- Label do valor do saldo -->
+      <widget class="QLabel" name="labelSaldoValor">
+        <property name="geometry">
+          <rect>
+            <x>560</x>
+            <y>45</y>
+            <width>220</width>
+            <height>25</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>R$ 0,00</string>
+        </property>
+        <property name="font">
+          <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+          </font>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+      </widget>
+
+
+      <!-- Título: Cadastrar transação -->
+      <widget class="QLabel" name="labelCadastrar">
+        <property name="geometry">
+          <rect>
+            <x>560</x>
+            <y>110</y>
+            <width>220</width>
+            <height>25</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>Cadastrar transação</string>
+        </property>
+        <property name="font">
+          <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+          </font>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+      </widget>
+
+      <!-- Grupo: Cadastrar transação -->
+      <widget class="QGroupBox" name="groupBoxCadastrar">
+        <property name="geometry">
+          <rect>
+            <x>550</x>
+            <y>140</y>
+            <width>221</width>
+            <height>191</height>
+          </rect>
+        </property>
+        <property name="title">
+          <string/>
+        </property>
+
+        <widget class="QLineEdit" name="inputDescricao">
+          <property name="geometry">
+            <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>200</width>
+              <height>30</height>
+            </rect>
+          </property>
+          <property name="placeholderText">
+            <string>Descrição</string>
+          </property>
+        </widget>
+
+        <widget class="QLineEdit" name="inputCategoria">
+          <property name="geometry">
+            <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>101</width>
+              <height>30</height>
+            </rect>
+          </property>
+          <property name="placeholderText">
+            <string>Categoria</string>
+          </property>
+        </widget>
+
+        <widget class="QLineEdit" name="inputValor">
+          <property name="geometry">
+            <rect>
+              <x>10</x>
+              <y>90</y>
+              <width>100</width>
+              <height>30</height>
+            </rect>
+          </property>
+          <property name="placeholderText">
+            <string>Valor</string>
+          </property>
+        </widget>
+
+        <widget class="QComboBox" name="comboTipo">
+          <property name="geometry">
+            <rect>
+              <x>110</x>
+              <y>90</y>
+              <width>100</width>
+              <height>30</height>
+            </rect>
+          </property>
+          <item>
+            <property name="text">
+              <string>Receita</string>
+            </property>
+          </item>
+          <item>
+            <property name="text">
+              <string>Despesa</string>
+            </property>
+          </item>
+        </widget>
+
+        <widget class="QPushButton" name="btnAdicionar">
+          <property name="geometry">
+            <rect>
+              <x>40</x>
+              <y>140</y>
+              <width>130</width>
+              <height>30</height>
+            </rect>
+          </property>
+          <property name="text">
+            <string>Adicionar</string>
+          </property>
+        </widget>
+
+      </widget>
+
+      <!-- Título: Excluir transação -->
+      <widget class="QLabel" name="labelExcluir">
+        <property name="geometry">
+          <rect>
+            <x>560</x>
+            <y>350</y>
+            <width>220</width>
+            <height>25</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>Excluir transação</string>
+        </property>
+        <property name="font">
+          <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+          </font>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+      </widget>
+
+      <!-- Grupo: Excluir transação -->
+      <widget class="QGroupBox" name="groupBoxExcluir">
+        <property name="geometry">
+          <rect>
+            <x>550</x>
+            <y>370</y>
+            <width>220</width>
+            <height>50</height>
+          </rect>
+        </property>
+        <property name="title">
+          <string/>
+        </property>
+
+        <widget class="QLineEdit" name="inputCodigoExcluir">
+          <property name="geometry">
+            <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>91</width>
+              <height>30</height>
+            </rect>
+          </property>
+          <property name="placeholderText">
+            <string>Código para excluir</string>
+          </property>
+        </widget>
+
+        <widget class="QPushButton" name="btnExcluir">
+          <property name="geometry">
+            <rect>
+              <x>110</x>
+              <y>10</y>
+              <width>100</width>
+              <height>30</height>
+            </rect>
+          </property>
+          <property name="text">
+            <string>Excluir</string>
+          </property>
+        </widget>
+
+      </widget>
+
+      <!-- Título: Salvar arquivo -->
+      <widget class="QLabel" name="labelSalvar">
+        <property name="geometry">
+          <rect>
+            <x>560</x>
+            <y>450</y>
+            <width>220</width>
+            <height>25</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>Salvar arquivo</string>
+        </property>
+        <property name="font">
+          <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+          </font>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+      </widget>
+
+      <!-- Botão Salvar -->
+      <widget class="QPushButton" name="btnSalvar">
+        <property name="geometry">
+          <rect>
+            <x>560</x>
+            <y>480</y>
+            <width>201</width>
+            <height>30</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>Salvar</string>
+        </property>
+      </widget>
+
+    </widget>
+  </widget>
+  <resources/>
+  <connections/>
+</ui>
